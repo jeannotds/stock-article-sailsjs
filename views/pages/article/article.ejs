@@ -1,0 +1,23 @@
+<div id="article" v-cloak>
+  <h2>{{ a }}</h2>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in articles" :key="item.id" @click="clickArticle(item.id)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.desc }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */
+exposeLocalsToBrowser() %>
