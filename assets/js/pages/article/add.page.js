@@ -7,21 +7,16 @@ parasails.registerPage("add", {
     syncing: false,
     articles: [],
     //…
-    dataArticle: {},
+    dataArticle: {
+      title: "",
+      desc: "",
+    },
     // data: {},
     formErrors: {},
 
-    formRules: {
-      title: {
-        required: true,
-      },
-      desc: {
-        required: true,
-      },
-    },
+    formRules: {},
 
     cloudError: "",
-
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
