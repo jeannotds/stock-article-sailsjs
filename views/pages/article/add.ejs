@@ -5,17 +5,17 @@
   </ol>
   <h1 class="display-4">Add Article</h1>
   <!-- <form method="post" action="/articles/create" > -->
-  <form method="" action="addArticle" @click="dataArticleSubmit($event)">
+  <ajax-form action="addArticle" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="dataArticleSubmit($event)" :form-data="dataArticle" :form-rules="formRules" :form-errors.sync="formErrors" >
     <div class="from-group">
-      <label for="title">Tutre : {{dataArticle.title}}</label>
-      <input type="text"  v-model="dataArticle.title" class="form-control" />
+      <label for="title">Titre : {{dataArticle.title}}</label>
+      <input type="text"  v-model.trim="dataArticle.title" class="form-control" />
     </div>
     <div class="from-group">
       <label for="body">Desc : {{dataArticle.desc}}</label>
-      <textarea type="text"   v-model="dataArticle.desc" class="form-control"></textarea>
+      <textarea type="text"   v-model.trim="dataArticle.desc" class="form-control"></textarea>
     </div>
-    <input type="submit" value="Submit" class="btn btn-primary" />
-  </form>
+    <ajax-button type="submit" :syncing="syncing" class="btn btn-primary" >POST</ajax-button>
+  </ajax-form>
 </div>
 <%- /* Expose server-rendered data as window.SAILS_LOCALS :: */
 exposeLocalsToBrowser() %>

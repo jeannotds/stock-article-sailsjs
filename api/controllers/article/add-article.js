@@ -24,7 +24,7 @@ module.exports = {
   },
 
   fn: async function (inputs, exits) {
-    if (!title) {
+    if (!inputs.title) {
       throw "badRequest";
     }
 

@@ -4,12 +4,25 @@ parasails.registerPage("add", {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
+    syncing: false,
+    articles: [],
     //…
-    dataArticle: {
-      title: "",
-      desc: "",
-    },
+    dataArticle: { },
     // data: {},
+    formErrors: {},
+
+    formRules: {
+      title: {
+        required: true,
+      },
+      desc: {
+        required: true,
+      }
+    },
+
+    cloudError: "",
+
+    // cloudSuccess: false,
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -27,10 +40,31 @@ parasails.registerPage("add", {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
     //…
-    dataArticleSubmit: function (event) {
-      event.preventDefault();
+    dataArticleSubmit: function (result) {
+      this.syncing = true;
+      // event.preventDefault();
+      // var newItem = _.extend(result, {
+      //   title: this.dataArticle.title,
+      //   desc: this.dataArticle.desc,
+      // });
 
-      console.log(this.dataArticle);
+      // this.articles.unshift(newItem);
+      // console.log(this.articles);
+    },
+
+    handleParsingForm: function () {
+      this.formErrors = {};
+      var argins = this.dataArticle;
+      if (!argins.title) {
+        this.formErrors.title = true;
+      }
+      if (!argins.desc) {
+        this.formErrors.desc = true;
+      }
+      if (Object.keys(this.formErrors).length > 0) {
+        return;
+      }
+      return true;
     },
   },
 });
