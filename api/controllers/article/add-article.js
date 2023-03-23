@@ -35,6 +35,6 @@ module.exports = {
 
     console.log("createArticle : ", createArticle);
 
-    return exits.success();
+    return exits.success({ createArticle });
   },
 };

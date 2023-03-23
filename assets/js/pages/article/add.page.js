@@ -7,7 +7,7 @@ parasails.registerPage("add", {
     syncing: false,
     articles: [],
     //…
-    dataArticle: { },
+    dataArticle: {},
     // data: {},
     formErrors: {},
 
@@ -17,39 +17,26 @@ parasails.registerPage("add", {
       },
       desc: {
         required: true,
-      }
+      },
     },
 
     cloudError: "",
 
-    // cloudSuccess: false,
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function () {
-    //…
-  },
-  mounted: async function () {
-    //…
-  },
+  beforeMount: function () {},
+  mounted: async function () {},
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
     //…
-    dataArticleSubmit: function (result) {
+    dataArticleSubmit: function () {
       this.syncing = true;
-      // event.preventDefault();
-      // var newItem = _.extend(result, {
-      //   title: this.dataArticle.title,
-      //   desc: this.dataArticle.desc,
-      // });
-
-      // this.articles.unshift(newItem);
-      // console.log(this.articles);
     },
 
     handleParsingForm: function () {
