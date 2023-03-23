@@ -64,5 +64,9 @@ module.exports.routes = {
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
   'POST  /api/v1/observe-my-session':                 { action: 'observe-my-session', hasSocketFeatures: true },
+  // 'POST  /api/v1/article/add-article':                 { action: 'article/add-article' },
+  'POST  /api/v1/article/add-article':                 { action: 'article/add-article' },
+  // 'GET /article': { action: 'article/view-article' },
+
 
 };

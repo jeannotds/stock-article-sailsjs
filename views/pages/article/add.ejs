@@ -1,17 +1,18 @@
-<div id="add" v-cloak>
+<div id="add" v-cloak  >
   <ol class="d-flex list-unstyled">
     <li class="breadcrumb-item"><a href="/articles/list">Articles </a></li>
     <li class="breadcrumb-item active">Add</li>
   </ol>
   <h1 class="display-4">Add Article</h1>
-  <form method="post" action="/articles/create">
+  <!-- <form method="post" action="/articles/create" > -->
+  <form method="" action="addArticle" @click="dataArticleSubmit($event)">
     <div class="from-group">
-      <label for="title">Title</label>
-      <input type="text" name="title" class="form-control" />
+      <label for="title">Tutre : {{dataArticle.title}}</label>
+      <input type="text"  v-model="dataArticle.title" class="form-control" />
     </div>
     <div class="from-group">
-      <label for="body">Body</label>
-      <textarea type="text" name="title" class="form-control"></textarea>
+      <label for="body">Desc : {{dataArticle.desc}}</label>
+      <textarea type="text"   v-model="dataArticle.desc" class="form-control"></textarea>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary" />
   </form>
